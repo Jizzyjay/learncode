@@ -1,9 +1,17 @@
-import React from "react"
+/**
+ * Layout component that queries for data
+ * with Gatsby's useStaticQuery component
+ *
+ * See: https://www.gatsbyjs.com/docs/use-static-query/
+ */
+
+import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import Header from './Header'
 
+import Header from "./Header"
 import "./layout.css"
+import Footer from "./Footer"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -11,6 +19,8 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+          description
+          keywords
         }
       }
     }
@@ -18,13 +28,11 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header />
-      <main>{children}</main>
-      <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-        </footer>
-      
+      <Header  />
+        <main>{children}</main>
+        <Footer data={data}>
+      Backgrounds made in Cinema 4D, iOS app in Swift, site in React. <a href="mailto:ekunolapaul@gmail.com" target="_blank">Email us</a> to ask anything. 
+    </Footer>
     </>
   )
 }
