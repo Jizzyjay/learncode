@@ -111,7 +111,7 @@ a {
   text-align: center;
   font-weight: 700;
   background: linear-gradient(104deg, #050A27 0%, #4A548C 100%);
-  -webkit-background-clip: text;
+  -webkit-background-clip: text; 
   -webkit-text-fill-color: transparent;
 }
 
@@ -125,11 +125,11 @@ a {
 }
 
 @media (max-width: 1060px) {
-  
   .cardGroup{
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 @media (max-width: 720px) {
   
   .cardGroup{
