@@ -1,5 +1,4 @@
 .Header{
-   
     position: fixed;
     width: 100%;
     padding: 50px 0;
@@ -7,11 +6,9 @@
     transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 .HeaderScrolled{
-background: black;
-padding: 15px 0;
-
+    background: black;
+    padding: 15px 0;
 }
-
 
 .HeaderGroup{
     max-width: 800px;
@@ -21,8 +18,8 @@ padding: 15px 0;
 }
 
 .Header a{
-color: white;
-font-weight: 700; 
+    color: white;
+    font-weight: 700; 
 }
 
 .Header button {
@@ -37,7 +34,6 @@ font-weight: 700;
     transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* for animating the button  */
 .Header button:hover {
     background: white;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
@@ -46,15 +42,14 @@ transform: translate(-3px);
 
 @media (max-width: 640px) {
     .Header {
-       padding: 15px 0; 
-       /* width: 20px; */
+        padding: 15px 0; 
         }
 
         .HeaderGroup{
-           grid-template-columns: repeat(4, auto); 
-            }
+            grid-template-columns: repeat(4, auto); 
+        }
 
-            .Header a:nth-child(4){
-                display: none;
-                }
+        .Header a:nth-child(4){
+            display: none;  
+    }
 }
