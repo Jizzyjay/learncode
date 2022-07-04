@@ -5,14 +5,11 @@ import Logo from "../images/logo-designcode.svg"
 import "./header.css"
 import StripeCheckout from 'react-stripe-checkout'
 
-
-
 function Header() {
 
 const [scrolled, setScrolled]= useState(false);
 const [amount, setAmount]= useState("");
 const [description, setDescription]= useState("");
-
 
 const handlePurchase = (token) => {
   const amount = 5000
@@ -32,7 +29,6 @@ const handlePurchase = (token) => {
   })
 }
 
-//change state on scroll
 useEffect(()=>{
   const handleScroll = () =>{
     const isScrollrd = window.scrollY 
@@ -48,14 +44,7 @@ setScrolled(true);
     };
 }, []);
 
-
-// handlePurchase = (token) =>{
-
-// }
-
   return (
-
-    // if it scroll i.e (true) give it classname of headerscrolled of not header 
     <div className={scrolled ? "Header HeaderScrolled" : "Header"}>
       <div className="HeaderGroup">
         <Link to="/">
