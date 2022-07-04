@@ -6,10 +6,9 @@ import Seo from "../components/seo";
 import Card from "../components/Card";
 import Section from "../components/Section";
 import Wave from "../components/Wave";
-import staticdata from "../../staticdata.json";
+import staticdata from "../staticdata.json";
 import Cell from "../components/Cell";
 import styled from "styled-components";
-// import Footer from "../components/Footer";
 
 
 const SectionCaption = styled.p`
@@ -27,8 +26,10 @@ padding: 0 20px;
 display: grid;
 grid-template-columns: repeat(2, 1fr);
 column-gap: 80px;
+
 @media (max-width: 800px) {
   grid-template-columns: repeat(1, 1fr);
+
 }
 `
 
@@ -47,12 +48,7 @@ const IndexPage = () => (
           and build apps with React{" "}
         </p>
         <p>
-
           <Link>  <a href="https://www.youtube.com/watch?v=tA4T9cvxY5o" rel="noreferrer" target="_blank">watch video</a> </Link> <br />
-          {/* <Link to="/page-2/">Go to page 2</Link> <br /> */}
-          {/* <Link to="/using-typescript/">Go to "Using TypeScript"</Link> <br />
-      <Link to="/using-ssr">Go to "Using SSR"</Link> <br />
-      <Link to="/using-dsg">Go to "Using DSG"</Link> */}
         </p>
 
         <div className="Logos">
@@ -138,4 +134,3 @@ const IndexPage = () => (
 )
 
 export default IndexPage
-// Footer

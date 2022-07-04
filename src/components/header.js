@@ -1,45 +1,80 @@
+import React, { useState, useEffect } from 'react';
+import PropTypes from "prop-types"
 import { Link } from "gatsby"
-import React from "react"
-import './Header.css'
+import Logo from "../images/logo-designcode.svg"
+import "./header.css"
+import StripeCheckout from 'react-stripe-checkout'
 
-class Header extends React.Component {
-  constructor(props) {
-    super(props)
 
-    this.state = {
-      hasScrolled: false
-    }
+
+function Header() {
+
+const [scrolled, setScrolled]= useState(false);
+const [amount, setAmount]= useState("");
+const [description, setDescription]= useState("");
+
+
+const handlePurchase = (token) => {
+  const amount = 5000
+  const description = "My awesome product"
+
+  const bodyObject = {
+    tokenId: token.id,
+    email: token.email,
+    name: token.name,
+    description,
+    amount
   }
 
-  componentDidMount() {
-    window.addEventListener('scroll',
-    this.handleScroll)
-  }
+  fetch('http://localhost:9000/stripe-charge', {
+    method: 'POST',
+    body: JSON.stringify(bodyObject)
+  })
+}
 
-  handleScroll = (event) => {
-    const scrollTop = window.pageYOffset
+//change state on scroll
+useEffect(()=>{
+  const handleScroll = () =>{
+    const isScrollrd = window.scrollY 
+if (isScrollrd > 50){
+setScrolled(true);
+}else{
+  setScrolled(false);
+}
+  };
+  window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+}, []);
 
-    if (scrollTop > 50) {
-      this.setState({hasScrolled: true })
-    } else {
-      this.setState({ hasScrolled: false })
-    }
-  }
 
-  render() {
-    return(
-      <div className={this.state.hasScrolled ? 
-      'Header HeaderScrolled' : 'Header'}>
-        <div className="HeaderGroup>">
-          <Link to="/"><img src={require('../images/logo-designcode.svg')} width="30" alt="" /></Link>
-          <Link to="/course">Courses</Link>
-          <Link to="/downnloads">Downloads</Link>
-          <Link to="/workshops">Workshops</Link>
-          <Link to="/buy"><button>Buy</button></Link>
-        </div>
+// handlePurchase = (token) =>{
+
+// }
+
+  return (
+
+    // if it scroll i.e (true) give it classname of headerscrolled of not header 
+    <div className={scrolled ? "Header HeaderScrolled" : "Header"}>
+      <div className="HeaderGroup">
+        <Link to="/">
+          <img src={Logo} alt="" width30></img>
+        </Link>
+        <Link to="/#">Courses</Link>
+        <Link to="/#">Downloads</Link>
+        <Link to="/#">Workshop</Link>
+        <StripeCheckout
+            amount={ 5000 }
+            image="https://cl.ly/0K2f1V3K3h0D/download/Logo.jpg"
+            token={handlePurchase}
+            stripeKey={'pk_test_51KlAbaFxGdSEpmZHoU9tIz812iDtxAYuGOvYaEd3BahrWf8cHvwZiYG5BGzTfkjMY4pcI03UiB86iVEekMdtHmho00A8G99ITn'}
+            >
+            <button>Buy</button>
+          </StripeCheckout>
+      </div>
     </div>
-    )
-  }
+  )
 }
 
 export default Header

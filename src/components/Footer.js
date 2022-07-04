@@ -58,17 +58,16 @@ function Footer({ children}) {
     return (
         <FooterGroup>
             <Text>Tweet “Mobile Application process, Introduction to cordova and Ionic. New courses by @pscon”</Text>
-                
             {/* <Button>  <a href="https://twitter.com/PSCON3">Tweet </a> </Button> */}
-            <Button>  <a href="https://www.youtube.com/watch?v=J8beNapZ1co&t=35s" target="_blank">Youtube </a> </Button>
+            <Button>  <a href="https://www.youtube.com/watch?v=J8beNapZ1co&t=35s" target="_blank" rel="noreferrer">Youtube </a> </Button>
             
-            <LinkGroup><a href="https://twitter.com/PSCON3" target="_blank">Twitter</a>
-            <a href="https://www.linkedin.com/in/ekunola-paul-42712b1aa/" target="_blank">Linkedin </a>
-            <a href="ekunolapaul@gmail.com" target="_blank">Email </a>
-            <a href="https://github.com/pscon" target="_blank">Github </a> </LinkGroup>
+            <LinkGroup><a href="https://twitter.com/PSCON3" target="_blank" rel="noreferrer">Twitter</a>
+            <a href="https://www.linkedin.com/in/ekunola-paul-42712b1aa/" target="_blank" rel="noreferrer">Linkedin </a>
+            <a href="ekunolapaul@gmail.com" target="_blank" rel="noreferrer">Email </a>
+            <a href="https://github.com/pscon" target="_blank" rel="noreferrer">Github </a> </LinkGroup>
             <Copyright>{children}</Copyright>
         </FooterGroup>
-    )
+)
 }
 
 export default Footer
