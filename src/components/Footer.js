@@ -47,27 +47,24 @@ const LinkGroup = styled.div`
     }
 `
 
-const Copyright = styled.div`
-    color: #486791;
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 0 20px;
-`
+// const Copyright = styled.div`
+//     color: #486791;
+//     max-width: 500px;
+//     margin: 0 auto;
+//     padding: 0 20px;
+// `
 
-function Footer({ children}) {
+function Footer() {
     return (
         <FooterGroup>
-            <Text>Tweet “Mobile Application process, Introduction to cordova and Ionic. New courses by @pscon”</Text>
-            {/* <Button>  <a href="https://twitter.com/PSCON3">Tweet </a> </Button> */}
-            <Button>  <a href="https://www.youtube.com/watch?v=J8beNapZ1co&t=35s" target="_blank" rel="noreferrer">Youtube </a> </Button>
-            
-            <LinkGroup><a href="https://twitter.com/PSCON3" target="_blank" rel="noreferrer">Twitter</a>
-            <a href="https://www.linkedin.com/in/ekunola-paul-42712b1aa/" target="_blank" rel="noreferrer">Linkedin </a>
-            <a href="ekunolapaul@gmail.com" target="_blank" rel="noreferrer">Email </a>
-            <a href="https://github.com/pscon" target="_blank" rel="noreferrer">Github </a> </LinkGroup>
-            <Copyright>{children}</Copyright>
+            <Text>Tweet “Mobile Application process, Introduction to cordova and Ionic.”</Text>
+            <LinkGroup><a href="https://twitter.com/PSCON3" target="_blank" rel="noopener">Twitter</a>
+            <a href="https://www.linkedin.com/in/ekunolajohn/" target="_blank" rel="noopener">Linkedin </a>
+            <a href="https://dev.to/jizzyjay" target="_blank" rel="noopener">Dev </a>
+            <a href="https://github.com/Jizzyjay" target="_blank" rel="noopener">Github </a> 
+            <a href="https://www.johnekunola.com/" target="_blank" rel="noopener">Website </a> </LinkGroup> 
         </FooterGroup>
-)
+    )
 }
 
 export default Footer
