@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import Logo from "../images/logo-designcode.svg"
-import "./header.css"
+import './Header.css'
 import StripeCheckout from 'react-stripe-checkout'
 
 function Header() {
