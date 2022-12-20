@@ -58,7 +58,7 @@ function Footer() {
     return (
         <FooterGroup>
             <Text>Tweet “Mobile Application process, Introduction to cordova and Ionic.”</Text>
-            <LinkGroup><a href="https://twitter.com/PSCON3" target="_blank" rel="noopener">Twitter</a>
+            <LinkGroup>
             <a href="https://www.linkedin.com/in/ekunolajohn/" target="_blank" rel="noopener">Linkedin </a>
             <a href="https://dev.to/jizzyjay" target="_blank" rel="noopener">Dev </a>
             <a href="https://github.com/Jizzyjay" target="_blank" rel="noopener">Github </a> 

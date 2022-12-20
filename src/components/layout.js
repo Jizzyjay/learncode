@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
         <Footer data={data}>
       Backgrounds made in Cinema 4D, iOS app in Swift, site in React. <a href="mailto:ekunolapaul@gmail.com" target="_blank" rel="noreferrer">Email us</a> to ask anything. 
       <br/>
-    Designed By: Pscon   ©2022
+    Designed By: John   ©2022
     </Footer>
     </>
   )
